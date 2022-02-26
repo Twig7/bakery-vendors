@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Add a new order!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+<body>
+  <h1>Ready to add a new order?</h1>
+  <br>
+  <div class="container" id="container1">
+    <div class="row">
+      <form action="/vendors/@Models.Id/orders" method="post">
+        <input id="vendorId" name="vendorId" type="hidden" value="@Models.Id">
+        <label for="orderName">Order Name</label>
+        <input id="orderName" name="orderName" type="text">
+        <label for="orderInfo">Order Information!</label>
+        <input id="orderInfo" name="orderInfo" type="text">
+        <label for="orderPrice">Order Price!</label>
+        <input id="orderPrice" name="orderPrice" type="text">
+        <label for="orderDate">Order date!</label>
+        <input placeholder="mm-dd-yyyy" id="orderDate" name="orderDate" type="text">
+        <button id="add" type="submit">Add your new Order!</button>
+      </form>
+    </div>
+  </div>
+</body>
