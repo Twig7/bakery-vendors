@@ -14,11 +14,12 @@
 
 <body>
   <h1>Ready to add a new order?</h1>
+  <h2>Does @Model.Name need a new order?</h2>
   <br>
   <div class="container" id="container1">
-    <div class="row">
-      <form action="/vendors/@Models.Id/orders" method="post">
-        <input id="vendorId" name="vendorId" type="hidden" value="@Models.Id">
+    <div class="row1">
+      <form action="/vendor/@Model.Id/orders" method="post">
+        <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
         <label for="orderName">Order Name</label>
         <input id="orderName" name="orderName" type="text">
         <label for="orderInfo">Order Information!</label>
