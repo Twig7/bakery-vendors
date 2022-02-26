@@ -27,24 +27,24 @@ namespace VendorOrder.Controllers
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor pickedVendor = Vendor.Find(id);
-      List<Order> VendorOrder = selectedVendor.Order;
-      model.Add("vendor", pickedVendor);
-      model.Add("order", VendorOrder);
-      return View(model);
+      Dictionary<string, object> models = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Orders> vendorOrders = selectedVendor.Orders;
+      models.Add("vendor", selectedVendor);
+      models.Add("orders", vendorOrders);
+      return View(models);
     }
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderName, string orderInfo, string OrderPrices, string orderDate)
+    public ActionResult Create(int vendorId, string orderName, string orderInfo, string orderPrice, string orderDate)
     {
-      Dictionary<string, object> model = new Dictionary<string, object>();
+      Dictionary<string, object> models = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderName, orderInfo, orderPrice, orderDate);
+      Orders newOrder = new Orders(orderName, orderInfo, orderPrice, orderDate);
       foundVendor.AddOrder(newOrder);
-      List<Order> vendorOrder = foundVendor.Orders;
-      model.Add("orders", vendorOrder);
-      model.Add("vendor", foundVendor);
-      return View("Show", model);
+      List<Orders> vendorOrder = foundVendor.Orders;
+      models.Add("orders", vendorOrder);
+      models.Add("vendor", foundVendor);
+      return View("Show", models);
     }
   }
 }

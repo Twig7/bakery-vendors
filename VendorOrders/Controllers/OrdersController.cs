@@ -16,19 +16,19 @@ namespace VendorOrder.Controllers
     [HttpPost("/orders/delete")]
     public ActionResult DeleteAll()
     {
-      Order.ClearAll();
+      Orders.ClearAll();
       return View();
     }
 
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
-      Order order = Order.Find(orderId);
+      Orders orders = Orders.Find(orderId);
       Vendor vendor = Vendor.Find(vendorId);
-      Dictionary<string, object> mode1 = new Dictionary<string, object>();
-      model.Add("order", order);
-      model.Add("vendor", vendor);
-      return View(model);
+      Dictionary<string, object> models = new Dictionary<string, object>();
+      models.Add("orders", orders);
+      models.Add("vendor", vendor);
+      return View(models);
     }
   }
 }

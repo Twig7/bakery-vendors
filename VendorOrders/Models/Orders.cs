@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace VendorOrder.Models
 {
-  public class Vendor 
+  public class Orders 
   {
     public string Name { get; set; }
     public string Info { get; set; }
     public string Price { get; set; }
     public string Date { get; set; }
     public int Id {get;}
-    private static List<Order> _instances = new List<Order> {};
+    private static List<Orders> _instances = new List<Orders> {};
 
-    public Order (string name, string info, string price, string date)
+    public Orders (string name, string info, string price, string date)
     {
       Name = name;
       Info = info;
@@ -20,15 +20,15 @@ namespace VendorOrder.Models
       _instances.Add(this);
       Id = _instances.Count;
     }
-    public static List<Order> GetAll()
+    public static List<Orders> GetAll()
     {
-      return _isntances;
+      return _instances;
     }
     public static void ClearAll()
     {
       _instances.Clear();
     }
-    public static Order Find(int searchId)
+    public static Orders Find(int searchId)
     {
       return _instances[searchId-1];
     }
