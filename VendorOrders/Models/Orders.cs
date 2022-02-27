@@ -4,17 +4,17 @@ namespace VendorOrder.Models
 {
   public class Orders 
   {
-    public string Name { get; set; }
-    public string Info { get; set; }
+    public string Ordername { get; set; }
+    public string Orderinfo { get; set; }
     public string Price { get; set; }
     public string Date { get; set; }
     public int Id {get;}
     private static List<Orders> _instances = new List<Orders> {};
 
-    public Orders (string name, string info, string price, string date)
+    public Orders (string orderName, string orderInfo, string price, string date)
     {
-      Name = name;
-      Info = info;
+      Ordername = orderName;
+      Orderinfo = orderInfo;
       Price = price;
       Date = date; 
       _instances.Add(this);
