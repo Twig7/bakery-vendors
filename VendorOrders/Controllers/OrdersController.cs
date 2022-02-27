@@ -25,10 +25,10 @@ namespace VendorOrder.Controllers
     {
       Orders orders = Orders.Find(orderId);
       Vendor vendor = Vendor.Find(vendorId);
-      Dictionary<string, object> models = new Dictionary<string, object>();
-      models.Add("orders", orders);
-      models.Add("vendor", vendor);
-      return View(models);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("orders", orders);
+      model.Add("vendor", vendor);
+      return View(model);
     }
   }
 }
