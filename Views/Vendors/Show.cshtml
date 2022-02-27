@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ellas Order's</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+<body>
+  @using VendorOrder.Models;
+  <h1>Hey, Ella! Checkout this swell orders for this vendor!</h1>
+  <br>
+  @foreach (Order order in @Model["orders"])
+  {
+    <h2><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Name</a></h2>
+  }
+  <br>
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order for this vendor?</a></p>
+  <p><a href="/">Or return to the homepage!</a></p>
+</body>
