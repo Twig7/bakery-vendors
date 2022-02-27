@@ -27,7 +27,7 @@ This is a project in which I created a way for the bakery owner (Ella) to proces
 
 ## Known Bugs
 
-- _List bugs here_
+- _New vendors give a pleasant greeting isntead of showing their order information_
 
 ## License
 
