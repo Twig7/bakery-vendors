@@ -13,7 +13,7 @@ namespace VendorOrder.Controllers
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
-    [HttpGet("/venders/new")]
+    [HttpGet("/vendors/new")]
     public ActionResult New()
     {
       return View();
@@ -22,7 +22,7 @@ namespace VendorOrder.Controllers
     public ActionResult Create(string vendorName, string vendorInfo)
     {
       Vendor newVendor = new Vendor(vendorName, vendorInfo);
-      return RedirectToAction("Start");
+      return RedirectToAction("Index");
     }
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
