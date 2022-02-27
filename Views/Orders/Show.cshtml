@@ -17,12 +17,13 @@
   <h2>Let's check out your order information! </h2>
   <br>
   <div class="container" id="orderInfo">
-    <h3>Vendor: @Model["vendor"].Name</h3>
-    <h3>Vendor Info: @Model["vendor"].Info</h3>
-    <h3>@Model["orders"].Name</h3>
-    <h3>@Model["orders"].Info</h3>
+    <h3>Vendor: @Model["vendor"].orderName</h3>
+    <h3>Vendor Info: @Model["vendor"].orderInfo</h3>
+    <h3>@Model["orders"].Ordername</h3>
+    <h3>@Model["orders"].Orderinfo</h3>
     <h3>@Model["orders"].Price</h3>
     <h3>@Model["orders"].Date</h3>
   </div>
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Do they have another order to add?</a></p>
   <p><a href="/">Head back to the home page!</a></p>
 </body>
