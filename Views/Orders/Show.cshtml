@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ella's Orders</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+<body>
+  <h1>Ella's Orders!</h1>
+  <h2>Let's check out your order information! </h2>
+  <br>
+  <div class="container" id="orderInfo">
+    <h3>Vendor: @Model["vendor"].Name</h3>
+    <h3>Vendor Info: @Model["vendor"].Info</h3>
+    <h3>@Model["orders"].Name</h3>
+    <h3>@Model["orders"].Info</h3>
+    <h3>@Model["orders"].Price</h3>
+    <h3>@Model["orders"].Date</h3>
+  </div>
+  <p><a href="/">Head back to the home page!</a></p>
+</body>
