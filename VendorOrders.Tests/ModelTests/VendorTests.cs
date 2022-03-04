@@ -6,8 +6,12 @@ using System;
 namespace VendorOrder.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
@@ -25,21 +29,6 @@ namespace VendorOrder.Tests
       Vendor newVendor = new Vendor(name, info);
       int result = newVendor.Id;
       Assert.AreEqual(2, result);
-    }
-    [TestMethod]
-    public void AddOrder_AssociatesOrderWithVendor_OrderList()
-    {
-      string orderName = "Ella";
-      string orderInfo = "Kiddo";
-      string price = "Priceless";
-      string date = "10/08/2019";
-      Orders newOrder = new Orders(orderName, orderInfo, price, date);
-      List<Orders> newList = new List<Orders> {newOrder};
-      string vendorName = "Ella's Bakery";
-      Vendor newVendor = new Vendor(vendorName, VendorInfo);
-      newVendor.AddOrder(newOrder);
-      List<Orders> result = newVendor.Orders;
-      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
