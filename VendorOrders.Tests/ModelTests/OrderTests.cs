@@ -19,5 +19,12 @@ namespace VendorOrder.Tests
       Orders newOrder = new Orders("Bagels", "3 Bagels", "A high five", "10/08/2019");
       Assert.AreEqual(typeof(Orders), newOrder.GetType());
     }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Orders> newList = new List<Orders> { };
+      List<Orders> result = Orders.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
