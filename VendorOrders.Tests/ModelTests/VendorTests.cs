@@ -14,6 +14,8 @@ namespace VendorOrder.Tests
       string name = "Test Name";
       string info = "Test Info";
       Vendor newVendor = new Vendor(name, info);
+      string result = newVendor.Name;
+      Assert.AreEqual(name, result);
     }
   }
 }
