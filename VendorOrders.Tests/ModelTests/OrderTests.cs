@@ -36,5 +36,15 @@ namespace VendorOrder.Tests
       List<Orders> result = Orders.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string info1 = "How many bagels?";
+      string info2 = "A normal amount of bagels";
+      Orders newOrder1 = new Orders(info1, "orderName", "$2", "orderDate");
+      Orders newOrder2 = new Orders (info2, "orderName2", "$1", "orderDate2");
+      Orders result = Orders.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
