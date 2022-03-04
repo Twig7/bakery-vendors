@@ -26,5 +26,15 @@ namespace VendorOrder.Tests
       List<Orders> result = Orders.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string ordername = "Too many bagels";
+      string orderinfo = "Who keeps letting her buy this many";
+      Orders newOrder = new Orders(ordername, orderinfo, "$2", "orderDate");
+      List<Orders> newList = new List<Orders> { newOrder };
+      List<Orders> result = Orders.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
