@@ -4,11 +4,15 @@ using System;
 using System.Collections.Generic;
 
 namespace VendorOrder.Tests
-
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Orders.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
